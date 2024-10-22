@@ -1,4 +1,4 @@
-# Blog Hajusrakendus
+# Microservices blog project
 
 ## In Case of Error 
 Enter into the terminal!
