@@ -12,15 +12,15 @@ app.post('/events', (req, res) => {
 
     events.push(event)
 
-    axios.post('http://posts-clusterip-srv:4000/events', event)
+    axios.post('https://posts-clusterip-srv:4000/events', event)
     .catch(err => console.error('Error posting to 4000:', err.message));
- axios.post('http://localhost:4001/events', event)
+    axios.post('https://comments-srv:4001/events', event)  // Use the service name
     .catch(err => console.error('Error posting to 4001:', err.message));
-axios.post('http://localhost:4002/events', event)
+    axios.post('https://query-srv:4002/events', event)  // Use the service name
     .catch(err => console.error('Error posting to 4002:', err.message));
-axios.post('http://localhost:4003/events', event)
+    axios.post('https://moderation-srv:4003/events', event)  // Use the service name
     .catch(err => console.error('Error posting to 4003:', err.message));
- 
+
 
     res.send({ status: 'OK' })
 })

@@ -14,7 +14,8 @@ spec:
       spec:
         containers:
           - name: client
-            image: blog/client:0.0.1
+            image: client:latest
+            imagePullPolicy: Never
 ---
 apiVersion: v1
 kind: Service

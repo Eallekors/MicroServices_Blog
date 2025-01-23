@@ -14,7 +14,8 @@ spec:
       spec:
         containers:
           - name: query
-            image: blog/query:0.0.1
+            image: query:latest
+            imagePullPolicy: Never
 ---
 apiVersion: v1
 kind: Service

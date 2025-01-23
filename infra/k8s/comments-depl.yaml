@@ -14,7 +14,8 @@ spec:
       spec:
         containers:
           - name: comments
-            image: blog/comments:0.0.1
+            image: comments:latest
+            imagePullPolicy: Never
 ---
 apiVersion: v1
 kind: Service

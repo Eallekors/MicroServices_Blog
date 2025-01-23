@@ -5,7 +5,12 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/use-regex: "true"  # Allow regex in paths
+    cert-manager.io/cluster-issuer: letsencrypt-staging  # Reference the ClusterIssuer for Let's Encrypt
 spec:
+  tls:
+    - hosts:
+        - posts.com  # Your domain name
+      secretName: posts-com-tls  # The secret that cert-manager will create to store the TLS certificate
   rules:
     - host: posts.com
       http:
